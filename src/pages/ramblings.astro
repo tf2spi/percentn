@@ -3,41 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 ---
 
-<Layout title="About">
+<Layout title="Welcome to Percent N!">
 	<main>
-        <h1>About %n!</h1>
-        <div class="instructions">
-            <p>
-                I like to do all sorts of hackery and sins to computers
-                and talking about it.
-            </p>
-            <p>
-                This site is purely my own without any help.
-                I'm the greatest website writer ever and no one
-                is allowed to tell me otherwise.
-            </p>
-        </div>
-		<ul role="list" class="link-card-grid">
-			<Card
-				href="https://docs.astro.build/"
-				title="Documentation"
-				body="Learn how Astro works and explore the official API docs."
-			/>
-			<Card
-				href="https://astro.build/integrations/"
-				title="Integrations"
-				body="Supercharge your project with new frameworks and libraries."
-			/>
-			<Card
-				href="https://astro.build/themes/"
-				title="Themes"
-				body="Explore a galaxy of community-built starter themes."
-			/>
-			<Card
-				href="https://astro.build/chat/"
-				title="Community"
-				body="Come say hi to our amazing Discord community. ❤️"
-			/>
+		<h1>Ramblings</h1>
+		<p>
+            This is where I brain-barf whatever's on my mind
+		</p>
+		<ul>
+            <li><a href="/posts/post-1">The Path to Insanity</a></li>
+			<li><a href="/posts/bag-of-tricks">Bag of Tricks</a></li>
 		</ul>
 	</main>
 </Layout>
