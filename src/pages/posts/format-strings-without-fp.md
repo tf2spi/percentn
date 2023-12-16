@@ -7,8 +7,8 @@ layout: ../../layouts/BlogPost.astro
 # Blind Format String Attacks without Frame Pointers
 
 [gera and riq's Advances in Format String Exploitation](http://phrack.org/issues/59/7.html)
-and [Kilic's Blind Format String Attacks](/formatstring.pdf) are the two
-best pieces of literature I've found about blind format string attacks,
+and [Kilic's Blind Format String Attacks](https://www.sec.in.tum.de/i20/publications/blind-format-string-attacks)
+are the two best pieces of literature I've found about blind format string attacks,
 which are format string attacks but the attacker gets no output
 from the application being attacked.
 
@@ -71,7 +71,7 @@ primitive for their "pointer generator" trick on ``i386``
 doesn't work on ``linux`` specifically.
 
 To explain this, we have to delve into the source code of ``glibc`` (yuck ...).
-For this, I'm going to look at [glibc 2.38](/glibc-2.38.tar.gz) but most,
+For this, I'm going to look at [glibc 2.38](https://ftp.gnu.org/gnu/glibc) but most,
 if not all, versions of glibc with ``printf_positional`` will do what I'm
 going to be talking about.
 
