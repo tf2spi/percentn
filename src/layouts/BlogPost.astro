@@ -1,16 +1,21 @@
 ---
 interface Props {
-	title: string;
+    frontmatter: {
+		title: string;
+		description: string;
+		pubDate: Date;
+		tags: string[];
+	}
 }
 
-const { title } = Astro.props;
+const { title, description, pubDate, tags } = Astro.props.frontmatter;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -19,12 +24,17 @@ const { title } = Astro.props;
 	<body>
 		<nav>
 			<ul>
-				<li><a href="/">Home</a></li>
-				<li><a href="/about">About</a></li>
-				<li><a href="/projects">Projects</a></li>
-				<li><a href="/ramblings">Back</a></li>
+				<li><a href="/percentn/home">Home</a></li>
+				<li><a href="/percentn/about">About</a></li>
+				<li><a href="/percentn/projects">Projects</a></li>
+				<li><a href="/percentn/ramblings">Back</a></li>
 			</ul>
 		</nav>
+		<p>This blog has tags:
+			<span>
+				{tags.map(t => <>{" "}<a href={`/percentn/tags/${t}`}>{t}</a></>)}
+			</span>
+		</p>
 		<slot />
 	</body>
 </html>

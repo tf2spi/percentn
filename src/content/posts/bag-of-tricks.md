@@ -1,7 +1,8 @@
 ---
 title: 'Bag of Tricks'
 description: 'Various tricks compiled into a blog post'
-layout: ../../layouts/BlogPost.astro
+pubDate: 2023-10-14
+tags: ["netcat", "network", "zlib", "hooks", "debug"]
 ---
 
 # Bag of Tricks

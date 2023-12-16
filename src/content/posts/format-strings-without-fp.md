@@ -1,7 +1,8 @@
 ---
 title: 'Blind Format String Attacks without Frame Pointers'
 description: 'Exploiting Format Strings Blindly on GLibc without Frame Pointers'
-layout: ../../layouts/BlogPost.astro
+pubDate: 2023-12-15
+tags: ["binary-exploitation", "format-strings", "arm", "glibc", "phrack", "network", "linux"]
 ---
 
 # Blind Format String Attacks without Frame Pointers

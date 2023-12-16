@@ -1,7 +1,8 @@
 ---
 title: 'Setting Breakpoints on Yourself!'
 description: 'How to Set Breakpoints on Yourself for anti-debugging or self-debugging'
-layout: ../../layouts/BlogPost.astro
+pubDate: 2023-11-16
+tags: ["debug", "hooks", "linux", "windows" ]
 ---
 
 # Setting Breakpoints on Yourself!
