@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import { getCollection } from "astro:content";
+const allPosts = await getCollection('posts');
 ---
 
 <Layout title="Welcome to %n!">
@@ -10,8 +11,7 @@ import Card from '../components/Card.astro';
             This is where I brain-barf whatever's on my mind
 		</p>
 		<ul>
-			<li><a href="/posts/bag-of-tricks">Bag of Tricks</a></li>
-			<li><a href="/posts/break-self">Setting Breakpoints on Yourself!</a></li>
+			{allPosts.map((post) => <li><a href={`/percentn/posts/${post.slug}`}>{post.data.title}</a></li>)}
 		</ul>
 	</main>
 </Layout>
