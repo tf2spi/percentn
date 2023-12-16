@@ -1,6 +1,6 @@
 ---
 title: 'Setting Breakpoints on Yourself!'
-description: 'Various tricks compiled into a blog post'
+description: 'How to Set Breakpoints on Yourself for anti-debugging or self-debugging'
 layout: ../../layouts/BlogPost.astro
 ---
 
