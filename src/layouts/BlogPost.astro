@@ -1,4 +1,5 @@
 ---
+import Layout from "./Layout.astro"
 interface Props {
     frontmatter: {
 		title: string;
@@ -11,81 +12,14 @@ interface Props {
 const { title, description, pubDate, tags } = Astro.props.frontmatter;
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content={description} />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<nav>
-			<ul>
-				<li><a href="/percentn/home">Home</a></li>
-				<li><a href="/percentn/about">About</a></li>
-				<li><a href="/percentn/projects">Projects</a></li>
-				<li><a href="/percentn/ramblings">Back</a></li>
-			</ul>
-		</nav>
+<Layout title={title} description={description}>
+	<div class="instructions">
 		<p>This blog has tags:
 			<span>
 				{tags.map(t => <>{" "}<a href={`/percentn/tags/${t}`}>{t}</a></>)}
 			</span>
 		</p>
 		<slot />
-	</body>
-</html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #9f4040;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-	nav ul {
-		list-style: none;
-		font-size: 1.5em;
-		margin: 0;
-		padding-top: 2em;
-	}
-	nav ul li {
-		display: inline-block;
-		margin: 0em 0.5em;
-	}
-	nav ul li a {
-		padding: 0.5em;
-		border-radius: 2em;
-		line-height: 1em;
-		border: 1px solid rgb(var(--accent));
-		color: white;
-		text-decoration: none;
-	}
-	nav ul li a:hover {
-		border: 1px solid rgb(var(--accent-light));
-		background-color: rgba(var(--accent-light), 0.2);
-	}
-</style>
+	</div>
+</Layout>
+  
