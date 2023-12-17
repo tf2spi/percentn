@@ -1,15 +1,16 @@
 ---
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/Layout.astro";
-import BlogPost from "../../layouts/BlogPost.astro";
 
 export async function getStaticPaths() {
   const allPosts = await getCollection("posts");
-  const uniqueTags = [...new Set(allPosts.map((post) => post.data.tags).flat())];
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.data.tags).flat()),
+  ];
 
   return uniqueTags.map((tag) => {
     const filteredPosts = allPosts.filter((post) =>
-      post.data.tags.includes(tag)
+      post.data.tags.includes(tag),
     );
     return {
       params: { tag },
@@ -20,11 +21,20 @@ export async function getStaticPaths() {
 
 const { tag } = Astro.params;
 const { posts } = Astro.props;
+const description = `Blogs tagged with ${tag}`;
 ---
 
-<Layout title={tag as string}>
-    <p>Posts tagged with {tag}</p>
+<Layout title={tag as string} description={description}>
+  <div class="instructions">
+    <h2>Posts tagged with {tag}</h2>
     <ul>
-        {posts.map((post) => <li><a href={`/percentn/posts/${post.slug}`}>{post.data.title}</a></li>)}
+      {
+        posts.map((post) => (
+          <li>
+            <a href={`/percentn/posts/${post.slug}`}>{post.data.title}</a>
+          </li>
+        ))
+      }
     </ul>
+  </div>
 </Layout>

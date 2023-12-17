@@ -1,16 +1,17 @@
 ---
 interface Props {
 	title: string;
+	description: string;
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
@@ -44,6 +45,11 @@ const { title } = Astro.props;
 		font-family: system-ui, sans-serif;
 		background: #13151a;
 		background-size: 224px;
+		color: #ffffff
+	}
+	body {
+		margin: 0;
+		padding: 16px;
 	}
 	code {
 		font-family:
@@ -60,13 +66,15 @@ const { title } = Astro.props;
 		list-style: none;
 		font-size: 1.5em;
 		margin: 0;
-		padding-top: 2em;
+		padding-top: 0.5em;
+		padding-bottom: 1em;
 	}
 	nav ul li {
 		display: inline-block;
 		margin: 0em 0.5em;
 	}
 	nav ul li a {
+		display: block;
 		padding: 0.5em;
 		border-radius: 2em;
 		line-height: 1em;
@@ -77,5 +85,52 @@ const { title } = Astro.props;
 	nav ul li a:hover {
 		border: 1px solid rgb(var(--accent-light));
 		background-color: rgba(var(--accent-light), 0.2);
+	}
+	a {
+		color:aqua;
+	}
+	a:visited {
+		color:aquamarine;
+	}
+
+	main {
+		margin: auto;
+		padding: 1rem;
+		width: 800px;
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 20px;
+		line-height: 1.6;
+	}
+	h1 {
+		font-size: 4rem;
+		font-weight: 700;
+		line-height: 1;
+		text-align: center;
+		margin-bottom: 1em;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
 	}
 </style>
