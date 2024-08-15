@@ -6,9 +6,20 @@ import Card from '../components/Card.astro';
 <Layout title="Welcome to Percent N!">
 	<main>
 		<h1>My Projects</h1>
-		<p>
-            This is where I'm gonna put links to all my cool projects!
-		</p>
+		<ul role="list" class="link-card-grid">
+            <Card
+                href="https://github.com/tf2spi/watchdog.git"
+                title="Watchdog"
+                body="Google-Fu to do an advanced search of news sites"
+            ></Card>
+		</ul>
+		<ul role="list" class="link-card-grid">
+            <Card
+                href="https://github.com/tf2spi/dumpshell.git"
+                title="Dumpshell"
+                body="Proof-of-Concept for CVE-2024-20032"
+            ></Card>
+		</ul>
 		<ul role="list" class="link-card-grid">
             <Card
                 href="https://github.com/tf2spi/dumpshell.git"
